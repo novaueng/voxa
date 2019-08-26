@@ -57,6 +57,7 @@ export class DialogflowReply implements IVoxaReply {
   public fulfillmentText: string = "";
   public source: string = "google";
   public payload: IDialogflowPayload;
+  public sessionEntityTypes: any[] = [];
 
   constructor() {
     this.payload = {
@@ -127,6 +128,7 @@ export class DialogflowReply implements IVoxaReply {
 
   public addStatement(statement: string, isPlain: boolean = false) {
     const simpleResponse: GoogleActionsV2SimpleResponse = this.getSimpleResponse();
+    console.log('Simple response was: ', simpleResponse);
 
     if (isPlain) {
       this.fulfillmentText = addToText(this.fulfillmentText, statement);
@@ -135,11 +137,20 @@ export class DialogflowReply implements IVoxaReply {
         statement,
       );
     } else {
+      this.fulfillmentText = addToText(this.fulfillmentText, statement);
       simpleResponse.textToSpeech = addToSSML(
         simpleResponse.textToSpeech,
         statement,
       );
     }
+  }
+
+  public addSessionEntity(sessionEntity: any) {
+    console.log('Session entity types in voxa are: ', this.sessionEntityTypes);
+    const sessionEntityTypes = this.sessionEntityTypes || [];
+    sessionEntityTypes.push(sessionEntity);
+
+    this.sessionEntityTypes = sessionEntityTypes;
   }
 
   public hasDirective(type: string | RegExp): boolean {
