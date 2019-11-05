@@ -2,9 +2,9 @@
 typedoc
 # compiled typescript
 
-lib/
+# lib/
 
-junit.xml
+# junit.xml
 # Sphinx documentation
 docs/_build/
 #### Vim
