@@ -204,6 +204,15 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
+"@types/express-serve-static-core@^4.17.18":
+  version "4.17.30"
+  resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.30.tgz#0f2f99617fa8f9696170c46152ccf7500b34ac04"
+  integrity sha512-gstzbTWro2/nFed1WXtf+TtrpwxH7Ggs4RLYTLbeVgIkUQOI3WG/JKjgeOU1zXDvezllupjrf8OPIdvTbIaVOQ==
+  dependencies:
+    "@types/node" "*"
+    "@types/qs" "*"
+    "@types/range-parser" "*"
+
 "@types/express@^4.11.1":
   version "4.17.0"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.0.tgz#49eaedb209582a86f12ed9b725160f12d04ef287"
@@ -211,6 +220,16 @@
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
+
+"@types/express@~4.17.7":
+  version "4.17.13"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.13.tgz#a76e2995728999bab51a33fabce1d705a3709034"
+  integrity sha512-6bSZTPaTIACxn48l50SR+axgrqm6qXFIxrdAKaG6PaJk3+zuUr35hBlgT7vOmJcum+OEaIBLtHV/qloEAFITeA==
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "^4.17.18"
+    "@types/qs" "*"
     "@types/serve-static" "*"
 
 "@types/form-data@^2.2.1":
@@ -309,10 +328,15 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.51.tgz#80600857c0a47a8e8bafc2dae6daed6db58e3627"
   integrity sha512-cArrlJp3Yv6IyFT/DYe+rlO8o3SIHraALbBW/+CcCYW/a9QucpLI+n2p4sRxAvl2O35TiecpX2heSZtJjvEO+Q==
 
-"@types/node@^9.4.6", "@types/node@^9.6.1":
+"@types/node@^9.6.1":
   version "9.6.50"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-9.6.50.tgz#7f2b7fd8a389fd90230c330da0a6ae2f414516af"
   integrity sha512-9Yzqn2NzJxwFzon4W+aqUAMl3FiVnJ965f5F3H5T+EpUrHqb2Is1SPp/lsj2WFBqXrhIINJ5SzSwneLMg5PgSQ==
+
+"@types/qs@*":
+  version "6.9.7"
+  resolved "https://registry.yarnpkg.com/@types/qs/-/qs-6.9.7.tgz#63bb7d067db107cc1e457c303bc25d511febf6cb"
+  integrity sha512-FGa1F62FT09qcrueBA6qYTrJPVDzah9a+493+o2PCXsesWHIn27G98TsSMs3WPNbZIEj4+VJf6saSFpvD+3Zsw==
 
 "@types/range-parser@*":
   version "1.2.3"
@@ -409,15 +433,14 @@ abort-controller@^3.0.0:
   dependencies:
     event-target-shim "^5.0.0"
 
-actions-on-google@^2.8.0:
-  version "2.10.0"
-  resolved "https://registry.yarnpkg.com/actions-on-google/-/actions-on-google-2.10.0.tgz#fea7d4f157ea82505e6c04bdd7c05b4465759eb3"
-  integrity sha512-/DKED/TvbOXUPpH+D2DZfhIoudUGUGNosygb3wLNojmyZfdff/cVGQD29xHHNjKEshe3WeXgNNii6lra9DDMwA==
+actions-on-google@^2.12.0:
+  version "2.14.0"
+  resolved "https://registry.yarnpkg.com/actions-on-google/-/actions-on-google-2.14.0.tgz#bf9814af37085f76793487d356ca146d96d103c8"
+  integrity sha512-msrXIyjoB3FeFhhQTIOe7//XzDcXg06PyHAwfM4dFJF8siC4B9MrhClh5P5x/fkgAtoKh6/mY5JKbA85EDLHyw==
   dependencies:
     "@types/aws-lambda" "^0.0.33"
     "@types/debug" "^0.0.30"
-    "@types/express" "^4.11.1"
-    "@types/node" "^9.4.6"
+    "@types/express" "~4.17.7"
     debug "^3.1.0"
     google-auth-library "^1.6.1"
     googleapis "^39.2.0"
